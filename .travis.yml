@@ -3,3 +3,11 @@ go:
   - "1.3"
 script:
   - "go test"
+
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/ee6b9fbf7ad0fc9e352c
+    on_success: change
+    on_failure: always
+    on_start: false
