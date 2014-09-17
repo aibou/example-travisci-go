@@ -34,6 +34,10 @@ func TestFib_5(t *testing.T) {
 	}
 }
 
+func TestFail(t *testing.T) {
+	t.Errorf("Fail")
+}
+
 func TestFib_6(t *testing.T) {
 	actual := fib(6)
 	expected := 8
