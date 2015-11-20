@@ -1,10 +1,11 @@
 machine:
-  pre:
-    environment:
-      HOGE: hoge
+  environment:
+    HOGE: hoge
+    FUGA: fuga
+  pre: 
+    - echo hg
   post:
-    environment:
-      FUGA: fuga
+    - echo fg
 
 dependencies:
   pre:
@@ -19,13 +20,11 @@ test:
     - echo ${FUGA}${FUGA}
 
 deployment:
-  pre:
-    production:
-      branch: master
-      commands: echo ${HOGE}HOGE
-
-  post:
-    production:
-      branch: master
-      commands: echo ${FUGA}FUGA
-    
+  production:
+    branch: master
+    commands:
+      - echo ${HOGE}HOGE
+      - echo ${FUGA}FUGA
+    post:
+      - echo HoGe
+      - echo FuGa
