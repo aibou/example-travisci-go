@@ -15,7 +15,7 @@ dependencies:
 
 test:
   pre:
-    - echo ${HOGE}${HOGE]
+    - echo ${HOGE}${HOGE}
   post:
     - echo ${FUGA}${FUGA}
 
